@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^/', include('main.urls')),
+    url(r'^blog_guider_static/(?P<path>.*)', 'django.views.static.serve', {'document_root': '../blog_guider_static'}),
+    url(r'', include('main.urls')),
 ]
